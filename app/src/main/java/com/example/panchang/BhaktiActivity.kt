@@ -65,7 +65,7 @@ class BhaktiActivity : AppCompatActivity() {
 
         if (userIndex != null) {
             val del = android.widget.Button(this).apply {
-                text = "తొలగించు"
+                this.text = "తొలగించు"
                 setOnClickListener {
                     UserSlokaStore.delete(this@BhaktiActivity, userIndex)
                     renderItems()
