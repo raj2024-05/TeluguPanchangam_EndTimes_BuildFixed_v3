@@ -176,6 +176,19 @@ object PanchangCalculator {
         return Pair(start, end)
     }
 
+    /** Telugu name for the 60 Karana halves in one lunar month. */
+    private fun karanaName(index: Int): String {
+        val recurring = arrayOf("బవ", "బాలవ", "కౌలవ", "తైతిల", "గరజ", "వణిజ", "విష్టి")
+        return when (index) {
+            0 -> "కింస్తుఘ్న"
+            in 1..56 -> recurring[(index - 1) % 7]
+            57 -> "శకుని"
+            58 -> "చతుష్పాద"
+            59 -> "నాగ"
+            else -> ""
+        }
+    }
+
     fun compute(
         year: Int, month: Int, day: Int,
         lat: Double, lon: Double, tz: Double
